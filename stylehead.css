@@ -1,0 +1,42 @@
+
+.header {
+  background-color: #69038e;
+  color: rgb(239, 243, 4);
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.logo-icon {
+  width: 60px;
+  height: 50px;
+  margin-right: 9px;
+  align-items: center;
+}
+
+.nav-links a {
+  color: rgb(4, 224, 249);
+  text-decoration:underline;
+  margin: 13px;
+  font-size: 18px;
+}
+
+.nav-links a:hover,
+.nav-links {
+  color: #fc0707;
+}
+.appointment-button {
+  background-color: #fc0707;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 20px;
+  font-size: 15px;
+}
