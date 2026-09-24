@@ -1,0 +1,255 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Times New Roman", Times, serif;
+  background-color: #806531;
+}
+
+/* Header */
+.header {
+  background-color: #021ed1;
+  padding: 15px clamp(16px, 7vw, 100px);
+  border-radius: 0 0 40px 40px;
+  position: relative;
+  z-index: 2;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+}
+
+.tamilnadutext {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #f4ec78;
+  font-family: Georgia, serif;
+  font-size: clamp(26px, 4vw, 50px);
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.logo-icon,
+.kuralicon {
+  width: clamp(55px, 7vw, 78px);
+  height: clamp(55px, 7vw, 78px);
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #f4ec78;
+}
+
+.logo-icon {
+  animation: moveLogo 2.5s ease-in-out infinite alternate;
+}
+
+.kuralicon {
+  animation: moveKuralLogo 2.5s ease-in-out infinite alternate;
+}
+
+.kural-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: white;
+  font-size: clamp(14px, 1.5vw, 17px);
+  line-height: 1.5;
+}
+
+.kural-box strong {
+  color: #ffd54f;
+}
+
+/* Navigation */
+.navlinks {
+  display: flex;
+  justify-content: center;
+  gap: 12px 25px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+  padding: 13px 20px;
+  background-color: rgba(57, 219, 8, 0.93);
+  border-radius: 25px;
+}
+
+.navlinks a {
+  color: #1a1818;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  font-size: clamp(14px, 1.5vw, 17px);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navlinks a:hover {
+  color: #0661ee;
+  transform: translateY(-3px);
+}
+
+/* Full-screen Kovil background */
+.banner {
+  min-height: calc(100vh - 190px);
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 60px 20px;
+  position: relative;
+  overflow: hidden;
+
+  background-image:
+    linear-gradient(rgba(9, 20, 70, 0.62), rgba(85, 16, 83, 0.48)),
+    url("kovil.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.22);
+  animation: fadeInOut 5s ease-in-out infinite alternate;
+}
+
+.banner-content {
+  position: relative;
+  z-index: 1;
+  max-width: 850px;
+  color: white;
+  animation: contentFade 1.5s ease-out;
+}
+
+.small-title {
+  color: #ffd54f;
+  letter-spacing: 4px;
+  font-family: Arial, sans-serif;
+  font-size: clamp(13px, 2vw, 16px);
+  margin-bottom: 15px;
+}
+
+.banner h1 {
+  font-family: Georgia, serif;
+  font-size: clamp(42px, 8vw, 82px);
+  margin-bottom: 18px;
+  text-shadow: 2px 3px 8px black;
+}
+
+.description {
+  font-family: Arial, sans-serif;
+  font-size: clamp(16px, 2.5vw, 21px);
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.explorebutton {
+  display: inline-block;
+  background-color: #f5b334;
+  color: #38200d;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  padding: 14px 28px;
+  border-radius: 30px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.explorebutton:hover {
+  background-color: white;
+  transform: scale(1.08);
+}
+
+/* Animations */
+@keyframes moveLogo {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes moveKuralLogo {
+  from {
+    transform: translateY(-8px);
+  }
+
+  to {
+    transform: translateY(5px);
+  }
+}
+
+@keyframes fadeInOut {
+  from {
+    opacity: 0.2;
+  }
+
+  to {
+    opacity: 0.65;
+  }
+}
+
+@keyframes contentFade {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tablet and mobile */
+@media (max-width: 768px) {
+  .header-top {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .tamilnadutext,
+  .kural-box {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .banner {
+    min-height: 600px;
+    background-position: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 15px;
+    border-radius: 0 0 25px 25px;
+  }
+
+  .tamilnadutext {
+    justify-content: center;
+  }
+
+  .kural-box {
+    flex-direction: column;
+  }
+
+  .navlinks {
+    gap: 12px 17px;
+    border-radius: 18px;
+  }
+
+  .banner {
+    min-height: 560px;
+    padding: 40px 16px;
+  }
+}
