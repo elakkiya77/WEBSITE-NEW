@@ -1,0 +1,505 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Times New Roman", Times, serif;
+  background-color: #806531;
+}
+
+/* Header */
+.header {
+  background-color: #021ed1;
+  padding: 15px clamp(16px, 7vw, 100px);
+  border-radius: 0 0 40px 40px;
+  position: relative;
+  z-index: 2;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.tamilnadutext {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #f4ec78;
+  font-family: Georgia, serif;
+  font-size: clamp(26px, 4vw, 50px);
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.logo-icon,
+.kuralicon {
+  width: clamp(55px, 7vw, 78px);
+  height: clamp(55px, 7vw, 78px);
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.logo-icon {
+  border: 3px solid #f4ec78;
+  animation: logoGlow 5s ease-in-out infinite;
+}
+
+.kuralicon {
+  border: 3px solid #ffd54f;
+  animation: kuralPulse 5s ease-in-out infinite;
+}
+
+.kural-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: white;
+  font-size: clamp(14px, 1.5vw, 17px);
+  line-height: 1.5;
+}
+
+.kural-box strong {
+  color: #ffd54f;
+}
+
+/* Navigation */
+.navlinks {
+  display: flex;
+  justify-content: center;
+  gap: 12px 25px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+  padding: 13px 20px;
+  background-color: rgba(22, 251, 22, 0.93);
+  border-radius: 25px;
+}
+
+.navlinks a {
+  color: #1a1818;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  font-size: clamp(14px, 1.5vw, 17px);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navlinks a:hover {
+  color: #0661ee;
+  transform: translateY(-3px);
+}
+
+/* Temple banner */
+.banner {
+  min-height: 75vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 60px 20px;
+  position: relative;
+  overflow: hidden;
+
+  background-image:
+    linear-gradient(rgba(9, 20, 70, 0.62), rgba(85, 16, 83, 0.48)),
+    url("kovil.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.22);
+  animation: fadeInOut 5s ease-in-out infinite alternate;
+}
+
+.banner-content {
+  position: relative;
+  z-index: 1;
+  max-width: 850px;
+  color: white;
+  animation: contentFade 1.5s ease-out;
+}
+
+/* Tamil welcome text */
+.small-title {
+  color: #ffd54f;
+  font-family: "Noto Sans Tamil", "Latha", sans-serif;
+  font-size: clamp(20px, 5vw, 40px);
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+  text-shadow: 1px 2px 4px black;
+}
+
+.banner h1 {
+  font-family: Georgia, serif;
+  font-size: clamp(42px, 8vw, 82px);
+  margin-bottom: 18px;
+  text-shadow: 2px 3px 8px black;
+}
+
+.description {
+  font-family: Arial, sans-serif;
+  font-size: clamp(16px, 2.5vw, 21px);
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+/* Buttons */
+.explorebutton,
+.hotelbutton {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  padding: 14px 28px;
+  border: 2px solid white;
+  border-radius: 30px;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.explorebutton {
+  background-color: #0a0a0a;
+}
+
+.hotelbutton {
+  background-color: #0b0a0b;
+  margin-left: 12px;
+}
+
+.explorebutton:hover,
+.hotelbutton:hover {
+  background-color: white;
+  color: #890404;
+  transform: scale(1.08);
+}
+
+/* Optional small rectangle image */
+.vanakkam {
+  width: 100px;
+  height: 55px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 3px solid #101010;
+  animation: kuralPulse 5s ease-in-out infinite;
+}
+
+/* Card section */
+.card-section {
+  padding: 70px 7%;
+  text-align: center;
+  background: linear-gradient(135deg, #2408fa, #03e929);
+}
+
+.card-heading {
+  color: #080808;
+  font-family: Georgia, serif;
+  font-size: clamp(32px, 5vw, 48px);
+  margin-bottom: 10px;
+}
+
+.card-subheading {
+  font-family: Arial, sans-serif;
+  color: #0c0505;
+  font-size: 17px;
+  margin-bottom: 40px;
+}
+
+/* Automatically responsive cards */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px;
+  max-width: 1300px;
+  margin: auto;
+}
+
+.tour-card {
+  min-height: 320px;
+  padding: 30px 22px;
+  border-radius: 25px;
+  text-align: left;
+  color: white;
+  position: relative;
+  overflow: hidden;
+
+  background-size: cover;
+  background-position: center;
+
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.tour-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  transition: background 0.4s ease;
+}
+
+.tour-card:hover::before {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.tour-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.tour-card:hover {
+  transform: translateY(-15px) scale(1.03);
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.35);
+}
+
+.tour-card h3 {
+  font-family: Georgia, serif;
+  font-size: 26px;
+  margin: 18px 0 14px;
+}
+
+.tour-card p {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.tour-card a {
+  color: white;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  text-decoration: none;
+  border-bottom: 2px solid white;
+  transition: letter-spacing 0.3s ease;
+}
+
+.tour-card a:hover {
+  letter-spacing: 1px;
+}
+
+.card-icon {
+  width: 75px;
+  height: 75px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.25);
+  font-size: 38px;
+  animation: iconFloat 2.5s ease-in-out infinite alternate;
+}
+
+/* Different card background images */
+.temple-card {
+  background-image: url("temple.jpg");
+}
+
+.beach-card {
+  background-image: url("beach.jpg");
+}
+
+.hill-card {
+  background-image: url("hillstation.jpg");
+}
+
+.food-card {
+  background-image: url("tamilfood.jpg");
+}
+
+/* Animations */
+@keyframes logoGlow {
+  0% {
+    transform: scale(1) rotate(-4deg);
+    box-shadow: 0 0 5px #fff45c;
+  }
+
+  50% {
+    transform: scale(1.12) rotate(4deg);
+    box-shadow: 0 0 25px #fff45c;
+  }
+
+  100% {
+    transform: scale(1) rotate(-4deg);
+    box-shadow: 0 0 5px #fff45c;
+  }
+}
+
+@keyframes kuralPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 5px #ffd54f;
+  }
+
+  50% {
+    transform: scale(1.14);
+    box-shadow: 0 0 25px #ffd54f;
+  }
+}
+
+@keyframes iconFloat {
+  from {
+    transform: translateY(0) rotate(-4deg);
+  }
+
+  to {
+    transform: translateY(-12px) rotate(4deg);
+  }
+}
+
+@keyframes fadeInOut {
+  from {
+    opacity: 0.2;
+  }
+
+  to {
+    opacity: 0.65;
+  }
+}
+
+@keyframes contentFade {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tablet */
+@media (max-width: 1000px) {
+  .header-top {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .tamilnadutext,
+  .kural-box {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .header {
+    padding: 15px;
+    border-radius: 0 0 25px 25px;
+  }
+
+  .kural-box {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .navlinks {
+    gap: 12px 17px;
+    border-radius: 18px;
+  }
+
+  .banner {
+    min-height: 560px;
+    padding: 40px 16px;
+  }
+
+  .card-section {
+    padding: 50px 18px;
+  }
+
+  .tour-card {
+    min-height: 300px;
+  }
+}
+
+/* Small mobile: 320px */
+@media (max-width: 320px) {
+  .header {
+    padding: 12px 10px;
+  }
+
+  .header-top {
+    gap: 15px;
+  }
+
+  .tamilnadutext {
+    font-size: 24px;
+    gap: 7px;
+  }
+
+  .logo-icon,
+  .kuralicon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .kural-box {
+    font-size: 12px;
+    gap: 8px;
+    text-align: center;
+  }
+
+  .navlinks {
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .navlinks a {
+    font-size: 12px;
+  }
+
+  .banner {
+    min-height: 480px;
+    padding: 35px 12px;
+  }
+
+  .banner h1 {
+    font-size: 36px;
+  }
+
+  .description {
+    font-size: 15px;
+  }
+
+  .explorebutton,
+  .hotelbutton {
+    width: 100%;
+    margin: 8px 0;
+    text-align: center;
+  }
+
+  .card-section {
+    padding: 40px 12px;
+  }
+
+  .tour-card {
+    min-height: 280px;
+    padding: 22px 18px;
+  }
+
+  .card-heading {
+    font-size: 30px;
+  }
+
+  .card-subheading {
+    font-size: 15px;
+  }
+
+  .vanakkam {
+    width: 90px;
+    height: 48px;
+  }
+}
