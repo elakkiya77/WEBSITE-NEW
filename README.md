@@ -1,1 +1,1956 @@
-# html-and-css
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family:"Times New Roman", Times,serif;
+   background-color: #f3f1f0;
+}
+/*header*/
+.header {
+  background: linear-gradient(135deg, #111b5c, #24245f, #3b245f);
+  padding:15px clamp(16px, 7vw, 100px);
+  border-radius:0 0 40px 40px;
+  position: relative;
+  z-index: 2;
+}
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+/* TAMIL NADU BRAND*/
+.tamilnadutext {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #f4ec78;
+  font-family: Georgia, serif;
+  font-size:clamp(26px, 4vw, 50px);
+  font-weight: bold;
+   letter-spacing: 2px;
+}
+.logo-icon,
+.kuralicon {
+  width:clamp(55px, 7vw, 78px);
+  height:clamp(55px, 7vw, 78px);
+  object-fit: cover;
+  border-radius: 50%;
+}
+.logo-icon {
+  border: 3px solid #f4ec78;
+  animation:  logoGlow 5s ease-in-out infinite;
+}
+.kuralicon {
+  border:3px solid #ffd54f;
+  animation:kuralPulse 5s ease-in-out infinite;
+}
+/* Tamil Nadu + English */
+.brand-name {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+.brand-name span {
+  color: #f4ec78;
+  
+}
+.brand-name small {
+  color: white;
+  font-family: Arial, sans-serif;
+  font-size: 30px;
+  letter-spacing: 1px;
+  margin-top: 5px;
+}
+/* KURAL */
+.kural-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: white;
+  font-size:  clamp(14px, 1.5vw, 17px);
+  line-height: 1.5;
+
+}
+.kural-box strong {
+    color: #ffd54f;
+}
+/* NAVIGATION */
+.navlinks {
+  display: flex;
+  justify-content: center;
+  gap: 12px 25px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+  padding: 13px 20px;
+      background: linear-gradient(135deg, #d4a72c, #f0c84b);
+  border-radius: 25px;
+  
+}
+.navlinks a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  color: #040404;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  font-size:clamp(14px, 1.5vw, 17px);
+  transition:    color 0.3s ease,transform 0.3s ease;
+}
+.navlinks a span {
+  font-size: 20px;
+  font-weight: normal;
+  color: #050101;
+  font-family: Arial, sans-serif;
+}
+.navlinks a:hover {
+  color: #feffff;
+  transform:translateY(-3px);
+}
+.navlinks a:hover span {
+  color: #f5f6f9;
+}
+/*HOTEL OFFER */
+.offer-ticker {
+  display: flex;
+  align-items: center;
+  height: 20px;
+  background-color: #afb92a;
+  border-bottom: 2px solid #888786;
+  overflow: hidden;
+}
+.offer-label {
+  flex-shrink: 0;
+  background-color: #fe0505;
+  color: rgb(6, 6, 6);
+  padding:10px 18px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  z-index: 2;
+}
+.offer-track {
+  flex: 1;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.offer-track p {
+  display: inline-block;
+  padding-left: 100%;
+  margin: 0;
+  color: #131312;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  animation: hotelOffer 10s linear infinite;
+}
+@keyframes hotelOffer {
+  from {
+    transform:  translateX(0);
+  }
+  to {
+    transform:  translateX(-100%);
+  }
+}
+/* HERO */
+.banner {
+  min-height: 75vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 60px 20px;
+  position: relative;
+  overflow: hidden;
+  background-image:
+    linear-gradient(rgba(9, 20, 70, 0.62),rgba(85, 16, 83, 0.48)),
+    url("kovil.jpg");
+  background-size: cover;
+  background-position: center;
+ background-repeat: no-repeat;
+}
+.banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color:
+    rgba(0, 0, 0, 0.22);
+  animation:    fadeInOut 5s ease-in-out infinite alternate;
+}
+.banner-content {
+  position: relative;
+  z-index: 1;
+  max-width: 850px;
+  color: white;
+  animation:  contentFade 1.5s ease-out;
+}
+/* 
+   BANNER TITLE
+ */
+.small-title {
+  color: #ffd54f;
+  font-family:    "Noto Sans Tamil","Latha",sans-serif;
+  font-size:  clamp(20px, 5vw, 40px);
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+  text-shadow:  1px 2px 4px black;
+}
+.banner h1 {
+  font-family: Georgia, serif;
+  font-size:  clamp(42px, 8vw, 82px);
+  margin-bottom: 18px;
+  text-shadow:  2px 3px 8px black;
+}
+.description {
+  font-family: Arial, sans-serif;
+  font-size:  clamp(16px, 2.5vw, 21px);
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+/*  BUTTONS*/
+.explorebutton,
+.hotelbutton {
+  display: inline-block;
+  color: rgb(12, 12, 12);
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  padding:14px 28px;
+  border:  2px solid rgb(8, 7, 7);
+  border-radius: 30px;
+transition:    background-color 0.3s ease,color 0.3s ease,transform 0.3s ease;
+}
+.explorebutton {
+  background-color: #8f7c7c;
+}
+.hotelbutton {
+  background-color: #8f7c7c;
+  
+  margin-left: 12px;
+}
+.explorebutton:hover,
+.hotelbutton:hover {
+  background-color: rgb(157, 184, 22);
+  color: #161515;
+  transform: scale(1.08);
+}
+/*  CARD SECTION*/
+.card-section {
+  padding:70px 7%;
+  text-align: center;
+  background:linear-gradient( 135deg, #b5b507, #490f0f);
+}
+/* Tamil + English section title */
+
+.section-label {
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+   text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+}
+.section-label span {
+  display: block;
+    color: #fffdfd;
+font-family: Arial, sans-serif;
+  font-size: 25px;
+  font-weight: normal;
+    letter-spacing: 1px;
+margin-top: 5px;
+}
+/* Vanakkam */
+.vanakkam {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 6px;
+  border:    3px solid #101010;
+  animation:kuralPulse 5s ease-in-out infinite;
+}
+/* Card heading */
+
+.card-heading {
+  color: #080808;
+  font-family: Georgia, serif;
+  font-size:
+    clamp(32px, 5vw, 48px);
+  margin-bottom: 10px;
+}
+.card-subheading {
+  font-family: Arial, sans-serif;
+  color: #0c0505;
+  font-size: 20px;
+  margin-bottom: 40px;
+}
+
+/*  TOUR CARDS*/
+.card-container {
+  display: grid;
+  grid-template-columns:
+    repeat(
+      auto-fit,
+      minmax(240px, 1fr)    );
+gap: 25px;
+  max-width: 1300px;
+  margin: auto;
+}
+.tour-card 
+{ 
+    min-height: 320px;
+   padding:    30px 22px;
+  border-radius: 25px;
+  text-align: left;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  box-shadow:
+    0 10px 22px
+    rgba(31, 30, 30, 0.25);
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+.tour-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    rgba(0, 0, 0, 0.55);
+  transition:
+    background 0.4s ease;
+}
+.tour-card:hover::before {
+  background:
+    rgba(0, 0, 0, 0.25);
+}
+.tour-card > * {
+  position: relative;
+  z-index: 1;
+}
+.tour-card:hover {
+  transform:
+    translateY(-15px)
+    scale(1.03);
+  box-shadow:
+    0 20px 35px
+    rgba(0, 0, 0, 0.35);
+}
+.tour-card h3 {
+  font-family: Georgia, serif;
+  font-size: 26px;
+  margin:
+    18px 0 14px;
+}
+.tour-card p {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+.tour-card a {
+  color: white;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  text-decoration: none;
+  border-bottom:
+    2px solid white;
+  transition:
+    letter-spacing 0.3s ease;
+}
+.tour-card a:hover {
+  letter-spacing: 1px;
+}
+/* Card icon */
+
+.card-icon {
+  width: 75px;
+  height: 75px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background-color:
+    rgba(255, 255, 255, 0.25);
+  font-size: 38px;
+  animation:
+    iconFloat 2.5s ease-in-out infinite alternate;
+}
+/* Card images */
+
+.temple-card {
+  background-image:
+    url("temple.jpg");
+}
+.beach-card {
+  background-image:
+    url("beach.jpg");
+}
+.hill-card {
+  background-image:
+    url("hillstation.jpg");
+}
+.food-card {
+  background-image:
+    url("tamilfood.jpg");
+}
+/*  CONTACT*/
+
+.contact-section {
+  padding: 80px 7%;
+  position: relative;
+  background-image:
+    linear-gradient(
+      rgba(60, 0, 0, 0.45),
+      rgba(60, 0, 0, 0.45)
+    ),    url("form background.jpg");
+background-size: cover;
+  background-position: center;
+ background-repeat: no-repeat;
+  overflow: hidden;
+}
+/* FORM HEADING*/
+.contact-heading {
+  text-align: center;
+
+  max-width: 750px;
+ margin: 0 auto 45px;
+}
+
+/* Tamil heading */
+
+.contact-heading .section-label {
+  color: #ffd54f;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 16px;
+
+  font-weight: bold;
+
+  letter-spacing: 2px;
+
+  margin-bottom: 12px;
+
+  text-shadow:
+    1px 1px 4px #000;
+}
+
+
+/* English below Tamil */
+
+.contact-heading .section-label span {
+  display: block;
+
+  color: white;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 13px;
+
+  font-weight: normal;
+
+  letter-spacing: 1px;
+
+  margin-top: 5px;
+
+  text-shadow:
+    1px 1px 4px #000;
+}
+
+
+/* Main heading */
+
+.contact-heading h2 {
+  font-family: Georgia, serif;
+
+  font-size:
+    clamp(32px, 5vw, 48px);
+
+  color: white;
+
+  margin-bottom: 12px;
+
+  text-shadow:
+    2px 2px 6px #000;
+}
+
+
+/* Description */
+
+.contact-heading > p:last-child {
+  font-family: Arial, sans-serif;
+
+  color: white;
+
+  line-height: 1.6;
+
+  text-shadow:
+    1px 1px 4px #000;
+}
+
+
+/*  CONTACT CONTAINER*/
+
+.contact-container {
+  max-width: 1200px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns:
+    0.8fr 1.2fr;
+
+  gap: 35px;
+
+  align-items: stretch;
+}
+
+
+/*  TRIP PLANNER*/
+
+.trip-planner {
+  padding: 35px;
+  border-radius: 25px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #4a0e0e,
+      #7b1e1e
+    );
+
+  color: white;
+  border: 2px solid #e89300;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+.trip-small-title {
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #ffd54f;
+  margin-bottom: 10px;
+}
+
+.trip-planner h3 {
+  font-family: Georgia, serif;
+  font-size: 30px;
+  margin-bottom: 12px;
+}
+
+.trip-description {
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.trip-options {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.trip-option {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  padding: 14px;
+
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 213, 79, 0.35);
+  border-radius: 14px;
+
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.trip-option:hover {
+  transform: translateX(6px);
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.trip-icon {
+  width: 45px;
+  height: 45px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  background-color: #fff3d6;
+  border-radius: 50%;
+
+  font-size: 22px;
+}
+
+.trip-option h4 {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.trip-option span {
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  color: #f5dfb3;
+}
+
+.trip-tip {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+
+  margin-top: 22px;
+  padding-top: 18px;
+
+  border-top: 1px solid rgba(255, 213, 79, 0.35);
+
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #ffe9a8;
+}
+/*  FORM*/
+
+.travel-form {
+  padding: 20px;
+
+  background-color: rgb(102, 28, 13);
+  
+
+  border-radius: 25px;
+
+  box-shadow:
+    0 12px 25px
+    rgba(15, 10, 10, 0.15);
+    border: 2px solid #d7c60a;
+}
+
+
+.form-row {
+  display: grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap: 20px;
+}
+
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+
+.form-group label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #fcfaf8;
+
+  font-family: Arial, sans-serif;
+
+  font-weight: bold;
+}
+
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 70%;
+
+  padding:
+    13px 15px;
+
+  border:
+    2px solid #e0cda9;
+
+  border-radius: 10px;
+
+  outline: none;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 14px;
+
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.form-group textarea {
+  resize: vertical;
+}
+
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #c98b2e;
+
+  box-shadow:
+    0 0 8px
+    rgba(201, 139, 46, 0.25);
+}
+
+
+.submit-button {
+  border: none;
+
+  background-color: #ed0e0e;
+
+  color: white;
+
+  padding:
+    14px 28px;
+
+  border-radius: 25px;
+
+  font-family: Arial, sans-serif;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease;
+}
+
+
+.submit-button:hover {
+  background-color: #8e1b1b;
+
+  transform:
+    translateY(-3px);
+}
+/*  FORM HEIGHT / GAP FIX */
+
+.contact-container {
+    align-items: start;
+}
+
+.travel-form {
+    height: auto;
+    min-height: 0;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-row {
+    gap: 15px;
+}
+
+.form-group textarea {
+    min-height: 130px;
+}
+
+.submit-button {
+    margin-top: 0;
+}
+/*  TESTIMONIAL SECTION */
+
+.testimonial-section {
+    padding: 80px 7%;
+    background-color: #5e0707;
+}
+/*  TESTIMONIAL HEADING */
+
+.testimonial-heading {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 45px;
+}
+
+
+/* Tamil Heading */
+
+.testimonial-heading .section-label {
+    color: #f5cd48;
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin: 0 0 15px;
+}
+
+/* English Heading */
+
+.testimonial-heading .section-label span {
+    display: block;
+    color: #fcfc3d;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-top: 5px;
+}
+/* Main Heading */
+
+.testimonial-heading h2 {
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 15px;
+}
+
+
+/* Description */
+
+.testimonial-heading > p:last-child {
+    color: #f5f0df;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.7;
+    margin: 0 auto;
+    max-width: 550px;
+}
+/*  TESTIMONIAL CARDS CONTAINER */
+
+.testimonial-container {
+    max-width: 1000px;
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+/*  TESTIMONIAL CARD*/
+
+.testimonial-card {
+    background-color: rgb(188, 205, 35);
+     background:linear-gradient( 135deg, #e6d620, #20f411);
+
+    padding: 25px;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 10px 25px
+        rgba(0, 0, 0, 0.12);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* Card Hover */
+
+.testimonial-card:hover {
+    transform:
+        translateY(-10px);
+
+    box-shadow:
+        0 18px 30px
+        rgba(241, 235, 235, 0.18);
+}
+
+
+/* QUOTE ICON */
+
+.quote-icon {
+    font-size: 50px;
+
+    color: #020202;
+
+    font-family: Georgia, serif;
+
+    height: 45px;
+}
+
+
+/*  TESTIMONIAL TEXT*/
+
+.testimonial-card > p {
+    color: #10100f;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    margin:
+        15px 0 25px;
+}
+
+
+/* 
+   VISITOR DETAILS
+ */
+
+.visitor {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    border-top:
+        1px solid #eadbc1;
+
+    padding-top: 18px;
+}
+
+
+/* Visitor Icon */
+
+.visitor-icon {
+    width: 48px;
+    height: 48px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 50%;
+
+    background-color: #fff0c9;
+
+    font-size: 25px;
+
+    flex-shrink: 0;
+}
+
+
+/* Visitor Name */
+
+.visitor h3 {
+    color: #0a0a0a;
+
+    font-family: Georgia, serif;
+
+    font-size: 18px;
+
+    margin: 0 0 3px;
+}
+
+
+/* Visitor Location */
+
+.visitor span {
+    color: #0f0f0f;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 13px;
+}
+
+
+/* 
+   TESTIMONIAL MOBILE
+ */
+
+@media (max-width: 768px) {
+
+    .testimonial-section {
+        padding: 60px 5%;
+    }
+
+    .testimonial-heading {
+        max-width: 100%;
+        margin-bottom: 35px;
+    }
+
+    .testimonial-heading h2 {
+        font-size: 30px;
+    }
+
+    .testimonial-heading > p:last-child {
+        font-size: 15px;
+    }
+
+    .testimonial-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .testimonial-card {
+        padding: 22px;
+    }
+}
+
+
+/* 
+   TESTIMONIAL SMALL MOBILE
+ */
+
+@media (max-width: 480px) {
+
+    .testimonial-heading .section-label {
+        font-size: 18px;
+    }
+
+    .testimonial-heading h2 {
+        font-size: 26px;
+    }
+
+    .testimonial-card {
+        border-radius: 20px;
+    }
+}
+
+/* 
+   FOOTER
+ */
+
+.footer {
+  background-color: #000000;
+
+  color: white;
+
+  padding-top: 60px;
+}
+
+
+.footer-container {
+  max-width: 1300px;
+
+  margin: auto;
+
+  padding:
+    0 7% 45px;
+
+  display: grid;
+
+  grid-template-columns:
+    1.5fr 1fr 1fr 1.3fr;
+
+  gap: 40px;
+}
+
+
+/* Footer logo */
+
+.footer-logo {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 20px;
+}
+
+
+.footer-logo img {
+  width: 55px;
+
+  height: 55px;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+
+  border:
+    2px solid #ffd54f;
+}
+
+
+.footer-brand {
+  display: flex;
+
+  flex-direction: column;
+
+  line-height: 1.1;
+}
+
+
+.footer-brand span {
+  color: #ffd54f;
+
+  font-family: Georgia, serif;
+
+  font-size: 25px;
+
+  font-weight: bold;
+}
+
+
+.footer-brand small {
+  color: white;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 11px;
+
+  margin-top: 4px;
+}
+
+
+.footer-about p {
+  color: #d5dbe5;
+
+  font-family: Arial, sans-serif;
+
+  line-height: 1.7;
+
+  max-width: 320px;
+}
+
+
+.footer h3 {
+  color: #ffd54f;
+
+  font-family: Georgia, serif;
+
+  font-size: 21px;
+
+  margin-bottom: 20px;
+}
+
+
+.footer-links {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+
+.footer-links a {
+  color: #d5dbe5;
+
+  text-decoration: none;
+
+  font-family: Arial, sans-serif;
+
+  transition:
+    color 0.3s ease,
+    padding-left 0.3s ease;
+}
+
+
+.footer-links a:hover {
+  color: #ffd54f;
+
+  padding-left: 6px;
+}
+
+
+.footer-contact p {
+  color: #d5dbe5;
+
+  font-family: Arial, sans-serif;
+
+  margin-bottom: 12px;
+}
+
+
+/* Social icons */
+
+.social-icons {
+  display: flex;
+
+  gap: 10px;
+
+  margin-top: 20px;
+}
+
+
+.social-icons a {
+  width: 38px;
+
+  height: 38px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 50%;
+
+  background-color: #173765;
+
+  color: white;
+
+  text-decoration: none;
+
+  font-family: Arial, sans-serif;
+
+  font-weight: bold;
+
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease;
+}
+
+
+.social-icons a:hover {
+  background-color: #c98b2e;
+
+  transform:
+    translateY(-4px);
+}
+
+
+/* Footer bottom */
+
+.footer-bottom {
+  border-top:
+    1px solid
+    rgba(255, 255, 255, 0.15);
+
+  padding:
+    20px 7%;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  flex-wrap: wrap;
+
+  color: #bfc7d4;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 13px;
+}
+
+
+/*  ANIMATIONS */
+
+@keyframes logoGlow {
+
+  0% {
+    transform:
+      scale(1)
+      rotate(-4deg);
+
+    box-shadow:
+      0 0 5px #fff45c;
+  }
+
+  50% {
+    transform:
+      scale(1.12)
+      rotate(4deg);
+
+    box-shadow:
+      0 0 25px #fff45c;
+  }
+
+  100% {
+    transform:
+      scale(1)
+      rotate(-4deg);
+
+    box-shadow:
+      0 0 5px #fff45c;
+  }
+
+}
+
+
+@keyframes kuralPulse {
+
+  0%,
+  100% {
+    transform:
+      scale(1);
+
+    box-shadow:
+      0 0 5px #ffd54f;
+  }
+
+  50% {
+    transform:
+      scale(1.14);
+
+    box-shadow:
+      0 0 25px #ffd54f;
+  }
+
+}
+
+
+@keyframes iconFloat {
+
+  from {
+    transform:
+      translateY(0)
+      rotate(-4deg);
+  }
+
+  to {
+    transform:
+      translateY(-12px)
+      rotate(4deg);
+  }
+
+}
+
+
+@keyframes fadeInOut {
+
+  from {
+    opacity: 0.2;
+  }
+
+  to {
+    opacity: 0.65;
+  }
+
+}
+
+
+@keyframes contentFade {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+
+}
+
+
+/*  TABLET */
+
+@media (max-width: 1000px) {
+
+  .header-top {
+    justify-content: center;
+
+    text-align: center;
+  }
+
+
+  .tamilnadutext,
+  .kural-box {
+    justify-content: center;
+
+    flex-wrap: wrap;
+  }
+
+
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+
+
+  .testimonial-container {
+    grid-template-columns:
+      1fr 1fr;
+  }
+
+
+  .footer-container {
+    grid-template-columns:
+      1fr 1fr;
+  }
+
+}
+/*  MOBILE */
+
+@media (max-width: 600px) {
+
+  .header {
+    padding: 15px;
+
+    border-radius:
+      0 0 25px 25px;
+  }
+
+
+  .kural-box {
+    flex-direction: column;
+
+    text-align: center;
+  }
+
+
+  .navlinks {
+    gap:
+      12px 17px;
+
+    border-radius: 18px;
+  }
+
+
+  .navlinks a {
+    font-size: 13px;
+  }
+
+
+  .navlinks a span {
+    font-size: 10px;
+  }
+   .offer-ticker {
+    height: 34px;
+  }
+   .offer-label {
+    padding:
+      9px 12px;
+
+    font-size: 12px;
+  }
+   .offer-track p {
+    font-size: 12px;
+
+    animation-duration: 8s;
+  }
+  .banner {
+    min-height: 560px;
+
+    padding:
+      40px 16px;
+  }
+  .card-section {
+    padding:
+      50px 18px;
+  }
+   .tour-card {
+    min-height: 300px;
+  }
+  .contact-section,
+  .testimonial-section {
+    padding:
+      55px 18px;
+  }
+  .contact-info,
+  .travel-form {
+    padding:
+      25px 20px;
+  }
+
+
+  .form-row {
+    grid-template-columns: 1fr;
+
+    gap: 0;
+  }
+
+
+  .testimonial-container {
+    grid-template-columns: 1fr;
+  }
+
+
+  .testimonial-card {
+    padding:
+      25px 20px;
+  }
+
+
+  .footer-container {
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+
+    padding-bottom: 35px;
+  }
+
+
+  .footer-bottom {
+    flex-direction: column;
+
+    text-align: center;
+
+    align-items: center;
+  }
+
+}
+
+
+/* SMALL MOBILE - 320px */
+
+@media (max-width: 320px) {
+
+  .header {
+    padding:
+      12px 10px;
+  }
+
+
+  .header-top {
+    gap: 15px;
+  }
+
+
+  .tamilnadutext {
+    font-size: 24px;
+
+    gap: 7px;
+  }
+
+
+  .logo-icon,
+  .kuralicon {
+    width: 48px;
+
+    height: 48px;
+  }
+
+
+  .brand-name small {
+    font-size: 10px;
+  }
+
+
+  .kural-box {
+    font-size: 12px;
+
+    gap: 8px;
+
+    text-align: center;
+  }
+
+
+  .navlinks {
+    gap: 10px;
+
+    padding: 10px;
+  }
+
+
+  .navlinks a {
+    font-size: 12px;
+  }
+
+
+  .navlinks a span {
+    font-size: 9px;
+  }
+
+
+  .offer-ticker {
+    height: 32px;
+  }
+
+
+  .offer-label {
+    padding:
+      8px 9px;
+
+    font-size: 11px;
+  }
+
+
+  .offer-track p {
+    font-size: 11px;
+
+    animation-duration: 7s;
+  }
+
+
+  .banner {
+    min-height: 480px;
+
+    padding:
+      35px 12px;
+  }
+
+
+  .banner h1 {
+    font-size: 36px;
+  }
+
+
+  .description {
+    font-size: 15px;
+  }
+
+
+  .explorebutton,
+  .hotelbutton {
+    width: 100%;
+
+    margin:
+      8px 0;
+
+    text-align: center;
+  }
+
+
+  .card-section {
+    padding:
+      40px 12px;
+  }
+
+
+  .tour-card {
+    min-height: 280px;
+
+    padding:
+      22px 18px;
+  }
+
+
+  .card-heading {
+    font-size: 30px;
+  }
+
+
+  .card-subheading {
+    font-size: 15px;
+  }
+
+
+  .vanakkam {
+    width: 90px;
+
+    height: 48px;
+  }
+
+
+  .contact-section,
+  .testimonial-section {
+    padding:
+      45px 12px;
+  }
+
+
+  .contact-info,
+  .travel-form {
+    padding:
+      20px 15px;
+  }
+
+
+  .contact-info h3 {
+    font-size: 25px;
+  }
+
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 13px;
+
+    padding:
+      11px 12px;
+  }
+
+
+  .submit-button {
+    width: 100%;
+  }
+
+
+  .testimonial-card {
+    padding:
+      20px 16px;
+  }
+
+
+  .footer-container {
+    padding:
+      0 12px 30px;
+  }
+
+
+  .footer-brand span {
+    font-size: 21px;
+  }
+
+
+  .footer-bottom {
+    padding:
+      18px 12px;
+
+    font-size: 11px;
+  }
+
+}
+
+/*  CONTACT RESPONSIVE */
+
+/*  TABLET  */
+
+@media (max-width: 1000px) {
+
+    .contact-section {
+        padding: 70px 5%;
+        background-position: center;
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        max-width: 800px;
+        align-items: start;
+    }
+
+    .contact-heading {
+        max-width: 700px;
+        margin-bottom: 35px;
+    }
+
+    .contact-heading h2 {
+        font-size: clamp(30px, 5vw, 42px);
+    }
+
+    .trip-planner,
+    .travel-form {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+
+/* - MOBILE  */
+
+@media (max-width: 600px) {
+
+    .contact-section {
+        padding: 55px 18px;
+        background-position: center;
+        background-size: cover;
+    }
+
+    /* Heading */
+
+    .contact-heading {
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .contact-heading .section-label {
+        font-size: 14px;
+        letter-spacing: 1.5px;
+    }
+
+    .contact-heading .section-label span {
+        font-size: 11px;
+        margin-top: 4px;
+    }
+
+    .contact-heading h2 {
+        font-size: 32px;
+        line-height: 1.2;
+        margin-bottom: 12px;
+    }
+
+    .contact-heading > p:last-child {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    /* Contact container */
+
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    /* Trip Planner */
+
+    .trip-planner {
+        width: 100%;
+        padding: 25px 20px;
+        box-sizing: border-box;
+        border-radius: 20px;
+    }
+
+    .trip-planner h3 {
+        font-size: 25px;
+        margin-bottom: 15px;
+    }
+
+    .trip-description {
+        font-size: 14px;
+        line-height: 1.6;
+        margin-bottom: 25px;
+    }
+
+    .trip-option {
+        gap: 10px;
+        margin: 15px 0;
+    }
+
+    .trip-icon {
+        width: 42px;
+        height: 42px;
+        font-size: 20px;
+    }
+
+    .trip-option h4 {
+        font-size: 15px;
+    }
+
+    .trip-option span {
+        font-size: 11px;
+    }
+
+    .trip-tip {
+        font-size: 12px;
+    }
+
+    /* Form */
+
+    .travel-form {
+        width: 100%;
+        padding: 25px 20px;
+        border-radius: 20px;
+        box-sizing: border-box;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-group label {
+        font-size: 14px;
+        margin-bottom: 7px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 13px;
+        padding: 12px;
+    }
+
+    .form-group textarea {
+        min-height: 130px;
+    }
+
+    .submit-button {
+        width: 100%;
+        padding: 13px 20px;
+        font-size: 14px;
+        margin-top: 0;
+    }
+}
+
+
+/*  SMALL MOBILE  */
+
+@media (max-width: 320px) {
+
+    .contact-section {
+        padding: 45px 12px;
+    }
+
+    .contact-heading {
+        margin-bottom: 25px;
+    }
+
+    .contact-heading .section-label {
+        font-size: 13px;
+        letter-spacing: 1px;
+    }
+
+    .contact-heading .section-label span {
+        font-size: 10px;
+    }
+
+    .contact-heading h2 {
+        font-size: 27px;
+        line-height: 1.2;
+    }
+
+    .contact-heading > p:last-child {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    .contact-container {
+        gap: 15px;
+    }
+
+    .trip-planner {
+        padding: 20px 15px;
+        border-radius: 18px;
+    }
+
+    .trip-planner h3 {
+        font-size: 22px;
+    }
+
+    .trip-description {
+        font-size: 13px;
+    }
+
+    .trip-option {
+        font-size: 13px;
+        gap: 8px;
+        margin: 13px 0;
+    }
+
+    .trip-option h4 {
+        font-size: 14px;
+    }
+
+    .trip-option span {
+        font-size: 10px;
+    }
+
+    .travel-form {
+        padding: 20px 15px;
+        border-radius: 18px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 12px;
+        padding: 10px;
+    }
+
+    .submit-button {
+        font-size: 13px;
+        padding: 12px;
+    }
+}
