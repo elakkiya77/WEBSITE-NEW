@@ -1,0 +1,43 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background: #fff0f5;
+}
+
+.container {
+    max-width: 420px;
+    margin: 40px auto;
+    padding: 20px;
+    background: white;
+    text-align: center;
+    border-radius: 12px;
+}
+
+input {
+    width: 90%;
+    padding: 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 10px;
+    margin: 5px;
+    background: #e75480;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+li {
+    text-align: left;
+    padding: 10px;
+    margin: 8px 0;
+    background: #ffe4ec;
+    overflow-wrap: anywhere;
+}
+
+li button {
+    background: #c2185b;
+}
